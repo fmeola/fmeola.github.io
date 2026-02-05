@@ -11,11 +11,14 @@
 {% assign user = site.github.owner %}
 
 <!doctype html>
-<html>
+<html data-lang="es" data-theme="light">
   <head>
     <meta charset="utf-8">
-    <title>{{ user.name }}</title>
+    <title>Franco Román Meola</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ "/assets/favicon.svg" | absolute_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ "/assets/apple-touch-icon.png" | absolute_url }}">
+    <link rel="mask-icon" href="{{ "/assets/favicon.svg" | absolute_url }}" color="#6b6f76">
     <link href="{{ "/assets/styles.css" | absolute_url }}" rel="stylesheet" type="text/css">
   </head>
   <body class="bg-white" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>

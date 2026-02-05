@@ -1,3 +1,132 @@
 ---
 layout: home
 ---
+<div class="topbar">
+  <div class="lang-switch">
+    <button class="lang-toggle" type="button" data-lang-toggle>
+      <span class="lang-es">ES</span>
+      <span class="lang-en">EN</span>
+    </button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5" stroke-width="1.5"></circle>
+        <path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.5 5.5l1.8 1.8M16.7 16.7l1.8 1.8M5.5 18.5l1.8-1.8M16.7 7.3l1.8-1.8" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<section class="hero">
+  <p class="eyebrow lang-es">Sitio personal</p>
+  <p class="eyebrow lang-en">Personal site</p>
+  <h1>Franco Román Meola</h1>
+  <p class="tagline lang-es">Docente dedicación exclusiva en ITBA. Cursos de grado de programación y desarrollo de software.</p>
+  <p class="tagline lang-en">Full-Time Assistant Professor at ITBA. Undergraduate programming courses and software development.</p>
+  <p class="meta">
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="12" cy="10" r="2.8" stroke-width="1.5"></circle>
+      </svg>
+      Buenos Aires
+    </span>
+    ·
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16v12H4z" stroke-width="1.5" stroke-linejoin="round"></path>
+        <path d="m4 7 8 6 8-6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <a href="mailto:franco@meola.me">franco@meola.me</a>
+    </span>
+    ·
+    <span class="meta-item">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 4h16v16H4z" stroke-width="1.5" stroke-linejoin="round"></path>
+        <path d="M8 11v6M8 8.5v.5" stroke-width="1.5" stroke-linecap="round"></path>
+        <path d="M12 17v-6m0 0c0-1.7 2-2.5 3.3-1.3.4.3.7.9.7 1.5V17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <a href="https://www.linkedin.com/in/francomeola" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
+  </p>
+</section>
+
+<section class="section">
+  <h2 class="lang-es">Trabajo</h2>
+  <h2 class="lang-en">Experience</h2>
+  <ul class="list lang-es">
+    <li class="card">
+      <div class="role">Profesor Adjunto — ITBA <span class="role-emoji" aria-hidden="true">🧑‍🏫</span></div>
+      <p class="desc">Cursos de grado</p>
+      <p class="desc">• Programación Imperativa (C)<br>• Programación Orientada a Objetos (Java y Ruby)<br>• Programación de Objetos Distribuidos (gRPC y Hazelcast)</p>
+    </li>
+    <li class="card">
+      <div class="role">Full Stack Sr. Software Engineer <span class="role-emoji" aria-hidden="true">👨‍💻</span></div>
+      <p class="desc">Desarrollo de un sistema de gestión integral para farmacias y grupos farmacéuticos que provee funciones para el manejo administrativo, contable y de gestión de compras y ventas.</p>
+    </li>
+  </ul>
+  <ul class="list lang-en">
+    <li class="card">
+      <div class="role">Assistant Professor (Adjunto) <span class="role-emoji" aria-hidden="true">🧑‍🏫</span></div>
+      <p class="desc">Undergraduate courses</p>
+      <p class="desc">• Imperative Programming (C)<br>• Object Oriented Programming (Java & Ruby)<br>• Distributed Objects Programming (RMI & Hazelcast)</p>
+    </li>
+    <li class="card">
+      <div class="role">Full-Stack Sr. Software Engineer <span class="role-emoji" aria-hidden="true">👨‍💻</span></div>
+      <p class="desc">Development of an integral management system for pharmacies and pharmaceutical groups that provides functions for administrative, accounting and purchasing and sales management.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2 class="lang-es">Estudios</h2>
+  <h2 class="lang-en">Education</h2>
+  <ul class="list lang-es">
+    <li>Master Data Science — FH Technikum Wien (Intercambio) 🇦🇹</li>
+    <li>Maestria en Ciencia de Datos — ITBA 🇦🇷</li>
+    <li>Ingenieria en Informatica — ITBA 🇦🇷</li>
+  </ul>
+  <ul class="list lang-en">
+    <li>Master Data Science — FH Technikum Wien (Exchange Program) 🇦🇹</li>
+    <li>Master of Data Science — ITBA Universidad 🇦🇷</li>
+    <li>Bachelor's Degree, Software Engineering — ITBA Universidad 🇦🇷</li>
+  </ul>
+</section>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var stored = window.localStorage.getItem("lang");
+    if (stored === "en" || stored === "es") {
+      root.setAttribute("data-lang", stored);
+    }
+
+    var toggle = document.querySelector("[data-lang-toggle]");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", function () {
+      var current = root.getAttribute("data-lang") || "es";
+      var next = current === "es" ? "en" : "es";
+      root.setAttribute("data-lang", next);
+      window.localStorage.setItem("lang", next);
+    });
+
+    var themeToggle = document.querySelector("[data-theme-toggle]");
+    if (!themeToggle) return;
+
+    var storedTheme = window.localStorage.getItem("theme");
+    if (storedTheme === "dark" || storedTheme === "light") {
+      root.setAttribute("data-theme", storedTheme);
+    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      root.setAttribute("data-theme", "dark");
+    } else {
+      root.setAttribute("data-theme", "light");
+    }
+
+    themeToggle.addEventListener("click", function () {
+      var currentTheme = root.getAttribute("data-theme") || "light";
+      var nextTheme = currentTheme === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", nextTheme);
+      window.localStorage.setItem("theme", nextTheme);
+    });
+  })();
+</script>
