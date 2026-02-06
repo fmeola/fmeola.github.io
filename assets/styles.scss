@@ -57,6 +57,8 @@ a:hover {
   padding: 72px 20px 96px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-inner {
@@ -234,6 +236,18 @@ h2 {
   color: var(--ink-soft);
 }
 
+.site-footer {
+  margin: -64px 0 32px;
+  text-align: center;
+}
+
+.site-footer-copy {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+  opacity: 0.72;
+  letter-spacing: 0.04em;
+}
 
 @media (max-width: 640px) {
   .page-inner {
@@ -247,5 +261,9 @@ h2 {
 
   .meta {
     font-size: 1rem;
+  }
+
+  .site-footer {
+    margin: -72px 0 24px;
   }
 }
