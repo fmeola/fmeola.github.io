@@ -1,0 +1,26 @@
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    function readPreference(key) {
+      try {
+        return window.localStorage.getItem(key);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    var lang = readPreference("lang");
+    if (lang !== "es" && lang !== "en") {
+      lang = /^en\b/i.test(navigator.language || "") ? "en" : "es";
+    }
+    root.setAttribute("data-lang", lang);
+    root.lang = lang;
+
+    var theme = readPreference("theme");
+    if (theme !== "light" && theme !== "dark") {
+      theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    root.setAttribute("data-theme", theme);
+  })();
+</script>

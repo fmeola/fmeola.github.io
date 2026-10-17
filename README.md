@@ -16,7 +16,7 @@ Abrí `http://127.0.0.1:4000`.
 Cuando termines de servir el sitio:
 
 ```sh
-git rm -rf _site
+bundle exec jekyll clean
 ```
 
 ## Deploy en GitHub Pages

@@ -1,27 +1,12 @@
 ---
 layout: home
 ---
-<div class="topbar">
-  <div class="lang-switch">
-    <button class="lang-toggle" type="button" data-lang-toggle>
-      <span class="lang-es">ES</span>
-      <span class="lang-en">EN</span>
-    </button>
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="4.5" stroke-width="1.5"></circle>
-        <path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.5 5.5l1.8 1.8M16.7 16.7l1.8 1.8M5.5 18.5l1.8-1.8M16.7 7.3l1.8-1.8" stroke-width="1.5" stroke-linecap="round"></path>
-      </svg>
-    </button>
-  </div>
-</div>
-
 <section class="hero">
-  <p class="eyebrow lang-es">Sitio personal</p>
-  <p class="eyebrow lang-en">Personal site</p>
+  <p class="eyebrow lang-es" lang="es">Sitio personal</p>
+  <p class="eyebrow lang-en" lang="en">Personal site</p>
   <h1>Franco Román Meola</h1>
-  <p class="tagline lang-es">Docente dedicación exclusiva en ITBA. Cursos de grado de programación y desarrollo de software.</p>
-  <p class="tagline lang-en">Full-Time Assistant Professor at ITBA. Undergraduate programming courses and software development.</p>
+  <p class="tagline lang-es" lang="es">Docente dedicación exclusiva en ITBA. Cursos de grado de programación y desarrollo de software.</p>
+  <p class="tagline lang-en" lang="en">Full-Time Associate Professor at ITBA. Undergraduate programming courses and software development.</p>
   <p class="meta">
     <span class="meta-item">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -50,87 +35,6 @@ layout: home
   </p>
 </section>
 
-<section class="section">
-  <h2 class="lang-es">Trabajo</h2>
-  <h2 class="lang-en">Experience</h2>
-  <ul class="list lang-es">
-    <li class="card linked-item">
-      <a class="item-link" href="https://www.itba.edu.ar" target="_blank" rel="noopener">
-        <div class="role">Profesor Adjunto - ITBA <span class="role-emoji" aria-hidden="true">👨🏻‍🏫</span></div>
-        <p class="desc">Cursos de grado</p>
-        <p class="desc">• Programación Imperativa (C)<br>• Programación Orientada a Objetos (Java y Ruby)<br>• Programación de Objetos Distribuidos (gRPC y Hazelcast)</p>
-      </a>
-    </li>
-    <li class="card">
-      <div class="role">Full Stack Sr. Software Engineer <span class="role-emoji" aria-hidden="true">👨🏻‍💻</span></div>
-      <p class="desc">Desarrollo de un sistema de gestión integral para farmacias y grupos farmacéuticos que provee funciones para el manejo administrativo, contable y de gestión de compras y ventas.</p>
-    </li>
-  </ul>
-  <ul class="list lang-en">
-    <li class="card linked-item">
-      <a class="item-link" href="https://www.itba.edu.ar" target="_blank" rel="noopener">
-        <div class="role">Assistant Professor - ITBA <span class="role-emoji" aria-hidden="true">👨🏻‍🏫</span></div>
-        <p class="desc">Undergraduate courses</p>
-        <p class="desc">• Imperative Programming (C)<br>• Object Oriented Programming (Java & Ruby)<br>• Distributed Objects Programming (gRPC & Hazelcast)</p>
-      </a>
-    </li>
-    <li class="card">
-      <div class="role">Full-Stack Sr. Software Engineer <span class="role-emoji" aria-hidden="true">👨🏻‍💻</span></div>
-      <p class="desc">Development of an integral management system for pharmacies and pharmaceutical groups that provides functions for administrative, accounting and purchasing and sales management.</p>
-    </li>
-  </ul>
-</section>
+{% include profile-section.html section=site.data.profile.experience %}
 
-<section class="section">
-  <h2 class="lang-es">Estudios</h2>
-  <h2 class="lang-en">Education</h2>
-  <ul class="list lang-es">
-    <li class="linked-item"><a class="item-link" href="https://www.technikum-wien.at/en/programs/master-artificial-intelligence-data-science/" target="_blank" rel="noopener">Master Data Science - FH Technikum Wien (Intercambio) 🇦🇹</a></li>
-    <li class="linked-item"><a class="item-link" href="https://www.itba.edu.ar/posgrado/especializacion-en-ciencia-de-datos/" target="_blank" rel="noopener">Maestría en Ciencia de Datos - ITBA 🇦🇷</a></li>
-    <li class="linked-item"><a class="item-link" href="https://www.itba.edu.ar/grado/ingenieria-informatica/" target="_blank" rel="noopener">Ingeniería en Informática - ITBA 🇦🇷</a></li>
-  </ul>
-  <ul class="list lang-en">
-    <li class="linked-item"><a class="item-link" href="https://www.technikum-wien.at/en/programs/master-artificial-intelligence-data-science/" target="_blank" rel="noopener">Master Data Science - FH Technikum Wien (Exchange Program) 🇦🇹</a></li>
-    <li class="linked-item"><a class="item-link" href="https://www.itba.edu.ar/posgrado/especializacion-en-ciencia-de-datos/" target="_blank" rel="noopener">Master of Data Science - ITBA 🇦🇷</a></li>
-    <li class="linked-item"><a class="item-link" href="https://www.itba.edu.ar/grado/ingenieria-informatica/" target="_blank" rel="noopener">Bachelor's Degree, Software Engineering - ITBA 🇦🇷</a></li>
-  </ul>
-</section>
-
-<script>
-  (function () {
-    var root = document.documentElement;
-    var stored = window.localStorage.getItem("lang");
-    if (stored === "en" || stored === "es") {
-      root.setAttribute("data-lang", stored);
-    }
-
-    var toggle = document.querySelector("[data-lang-toggle]");
-    if (!toggle) return;
-
-    toggle.addEventListener("click", function () {
-      var current = root.getAttribute("data-lang") || "es";
-      var next = current === "es" ? "en" : "es";
-      root.setAttribute("data-lang", next);
-      window.localStorage.setItem("lang", next);
-    });
-
-    var themeToggle = document.querySelector("[data-theme-toggle]");
-    if (!themeToggle) return;
-
-    var storedTheme = window.localStorage.getItem("theme");
-    if (storedTheme === "dark" || storedTheme === "light") {
-      root.setAttribute("data-theme", storedTheme);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.setAttribute("data-theme", "light");
-    }
-
-    themeToggle.addEventListener("click", function () {
-      var currentTheme = root.getAttribute("data-theme") || "light";
-      var nextTheme = currentTheme === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", nextTheme);
-      window.localStorage.setItem("theme", nextTheme);
-    });
-  })();
-</script>
+{% include profile-section.html section=site.data.profile.education %}

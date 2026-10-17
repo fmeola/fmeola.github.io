@@ -1,19 +1,8 @@
-{% if site.style == 'dark' %}
-  {% assign icon_color = "#ffffff" %}
-{% else %}
-  {% assign icon_color = "#24292e" %}
-{% endif %}
-
-{% assign content = page.content | strip_newlines %}
-
-{% assign posts_total = site.posts | size %}
-
-{% assign user = site.github.owner %}
-
 <!doctype html>
-<html data-lang="es" data-theme="light">
+<html lang="es" data-lang="es" data-theme="light">
   <head>
     <meta charset="utf-8">
+    {% include preferences-init.html %}
     <title>{{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ site.description }}">
@@ -27,9 +16,13 @@
     <meta name="twitter:title" content="{{ site.title }}">
     <meta name="twitter:description" content="{{ site.description }}">
     <meta name="twitter:image" content="{{ "/assets/og-image.png" | absolute_url }}">
-    <link rel="icon" href="{{ "/assets/favicon.svg" | absolute_url }}" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="{{ "/assets/apple-touch-icon.png" | absolute_url }}">
-    <link rel="mask-icon" href="{{ "/assets/favicon.svg" | absolute_url }}" color="#6b6f76">
-    <link href="{{ "/assets/styles.css" | absolute_url }}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="{{ "/assets/favicon.svg" | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
+    <link rel="mask-icon" href="{{ "/assets/favicon.svg" | relative_url }}" color="#6b6f76">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap">
+    <link href="{{ "/assets/styles.css" | relative_url }}" rel="stylesheet" type="text/css">
+    <script src="{{ "/assets/preferences.js" | relative_url }}" defer></script>
   </head>
-  <body class="bg-white" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
+  <body>

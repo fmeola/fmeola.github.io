@@ -1,0 +1,46 @@
+experience:
+  title:
+    es: Trabajo
+    en: Experience
+  items:
+    - url: https://www.itba.edu.ar/grado/ingenieria-informatica/
+      role:
+        es: Profesor Asociado - ITBA
+        en: Associate Professor - ITBA
+      emoji: 👨🏻‍🏫
+      description:
+        es: Cursos de grado
+        en: Undergraduate courses
+      courses:
+        es:
+          - Programación Imperativa (C)
+          - Programación Orientada a Objetos (Java y Ruby)
+          - Programación de Objetos Distribuidos (gRPC y Hazelcast)
+        en:
+          - Imperative Programming (C)
+          - Object Oriented Programming (Java & Ruby)
+          - Distributed Objects Programming (gRPC & Hazelcast)
+    - role:
+        es: Full Stack Sr. Software Engineer
+        en: Full-Stack Sr. Software Engineer
+      emoji: 👨🏻‍💻
+      description:
+        es: Desarrollo de un sistema de gestión integral para farmacias y grupos farmacéuticos que provee funciones para el manejo administrativo, contable y de gestión de compras y ventas.
+        en: Development of an integral management system for pharmacies and pharmaceutical groups that provides functions for administrative, accounting and purchasing and sales management.
+education:
+  title:
+    es: Estudios
+    en: Education
+  items:
+    - url: https://www.technikum-wien.at/en/programs/master-artificial-intelligence-data-science/
+      label:
+        es: Master Data Science - FH Technikum Wien (Intercambio) 🇦🇹
+        en: Master Data Science - FH Technikum Wien (Exchange Program) 🇦🇹
+    - url: https://www.itba.edu.ar/posgrado/especializacion-en-ciencia-de-datos/
+      label:
+        es: Maestría en Ciencia de Datos - ITBA 🇦🇷
+        en: Master of Data Science - ITBA 🇦🇷
+    - url: https://www.itba.edu.ar/grado/ingenieria-informatica/
+      label:
+        es: Ingeniería en Informática - ITBA 🇦🇷
+        en: Bachelor's Degree, Software Engineering - ITBA 🇦🇷

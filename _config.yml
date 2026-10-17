@@ -1,7 +1,12 @@
 layout: home
-style: light
 title: Franco Román Meola
 description: Docente dedicación exclusiva en ITBA. Cursos de grado de programación y desarrollo de software.
 url: https://meola.me
 plugins:
   - jekyll-sitemap
+exclude:
+  - README.md
+  - LICENSE.txt
+  - Gemfile
+  - Gemfile.lock
+  - update_bg.sh

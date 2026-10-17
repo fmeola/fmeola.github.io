@@ -1,15 +1,16 @@
 {% include header.html %}
 
-<main class="page">
-  <div class="page-inner">
+<div class="page">
+  <main class="page-inner">
+    {% include preference-controls.html %}
     {{ content }}
-  </div>
-</main>
-<footer class="site-footer">
-  <p class="site-footer-copy">
-    <span class="lang-es">© 2026 Franco Román Meola. Todos los derechos reservados.</span>
-    <span class="lang-en">© 2026 Franco Román Meola. All rights reserved.</span>
-  </p>
-</footer>
+  </main>
+  <footer class="site-footer">
+    <p class="site-footer-copy">
+      <span class="lang-es" lang="es">© {{ 'now' | date: '%Y' }} Franco Román Meola. Todos los derechos reservados.</span>
+      <span class="lang-en" lang="en">© {{ 'now' | date: '%Y' }} Franco Román Meola. All rights reserved.</span>
+    </p>
+  </footer>
+</div>
 
 {% include footer.html %}
