@@ -22,4 +22,8 @@ bundle exec jekyll clean
 ## Deploy en GitHub Pages
 
 El deploy se hace con GitHub Actions (`.github/workflows/pages.yml`).
+Cada pull request compila el sitio con `bundle exec jekyll build`, sin publicar
+artefactos ni desplegar. El deploy se ejecuta al hacer push a `master` o al iniciar
+manualmente el workflow sobre esa rama.
+
 En GitHub: Settings → Pages → Source: GitHub Actions.

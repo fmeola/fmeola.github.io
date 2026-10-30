@@ -95,6 +95,8 @@ a:hover {
 
 .lang-toggle,
 .theme-toggle {
+  min-width: 44px;
+  min-height: 44px;
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--ink);
@@ -204,6 +206,7 @@ h1 {
 .meta-item svg {
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
   stroke: currentColor;
 }
 
@@ -326,9 +329,9 @@ h2::after {
 
 .site-footer-copy {
   margin: 0;
-  font-size: 0.72rem;
-  color: var(--muted);
-  opacity: 0.72;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
   letter-spacing: 0.04em;
 }
 
@@ -348,5 +351,11 @@ h2::after {
 
   .meta {
     font-size: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta-separator {
+    display: none;
   }
 }
