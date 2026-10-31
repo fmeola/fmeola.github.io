@@ -56,7 +56,7 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid currentColor;
   transition: border-color 150ms ease, color 150ms ease;
 }
 
@@ -85,6 +85,10 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 24px;
+}
+
+.topbar[hidden] {
+  display: none;
 }
 
 .lang-switch {
@@ -333,6 +337,21 @@ h2::after {
   line-height: 1.6;
   color: var(--ink-soft);
   letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  .lang-toggle,
+  .theme-toggle,
+  .linked-item,
+  .item-link {
+    transition: none;
+  }
+
+  .lang-toggle:hover,
+  .theme-toggle:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 640px) {

@@ -1,21 +1,33 @@
 <!doctype html>
-<html lang="es" data-lang="es" data-theme="light">
+<html lang="{{ page.lang }}" data-lang="{{ page.lang }}" data-theme="light">
   <head>
     <meta charset="utf-8">
     {% include preferences-init.html %}
     <title>{{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{ site.description }}">
-    <link rel="canonical" href="{{ "/" | absolute_url }}">
+    {% assign description = site.description %}
+    {% if page.lang == "en" %}{% assign description = site.description_en %}{% endif %}
+    <meta name="description" content="{{ description | escape }}" data-content-es="{{ site.description | escape }}" data-content-en="{{ site.description_en | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}" data-href-es="{{ "/" | absolute_url }}" data-href-en="{{ "/en/" | absolute_url }}">
+    <link rel="alternate" hreflang="es" href="{{ "/" | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ "/en/" | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ "/" | absolute_url }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ site.title }}">
-    <meta property="og:description" content="{{ site.description }}">
-    <meta property="og:url" content="{{ "/" | absolute_url }}">
+    <meta property="og:description" content="{{ description | escape }}" data-content-es="{{ site.description | escape }}" data-content-en="{{ site.description_en | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}" data-content-es="{{ "/" | absolute_url }}" data-content-en="{{ "/en/" | absolute_url }}">
+    <meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% else %}es_AR{% endif %}" data-content-es="es_AR" data-content-en="en_US">
+    <meta property="og:locale:alternate" content="{% if page.lang == 'en' %}es_AR{% else %}en_US{% endif %}" data-content-es="en_US" data-content-en="es_AR">
     <meta property="og:image" content="{{ "/assets/og-image.png" | absolute_url }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ site.title | escape }}. {{ description | escape }}" data-content-es="{{ site.title | escape }}. {{ site.description | escape }}" data-content-en="{{ site.title | escape }}. {{ site.description_en | escape }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:description" content="{{ description | escape }}" data-content-es="{{ site.description | escape }}" data-content-en="{{ site.description_en | escape }}">
     <meta name="twitter:image" content="{{ "/assets/og-image.png" | absolute_url }}">
+    <meta name="twitter:image:alt" content="{{ site.title | escape }}. {{ description | escape }}" data-content-es="{{ site.title | escape }}. {{ site.description | escape }}" data-content-en="{{ site.title | escape }}. {{ site.description_en | escape }}">
     <link rel="icon" href="{{ "/assets/favicon.svg" | relative_url }}" type="image/svg+xml">
     <link rel="apple-touch-icon" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
     <link rel="mask-icon" href="{{ "/assets/favicon.svg" | relative_url }}" color="#6b6f76">

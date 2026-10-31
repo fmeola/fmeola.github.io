@@ -10,7 +10,10 @@
       }
     }
 
-    var lang = readPreference("lang");
+    var lang = new URLSearchParams(window.location.search).get("lang");
+    if (lang !== "es" && lang !== "en") {
+      lang = root.lang === "en" ? "en" : readPreference("lang");
+    }
     if (lang !== "es" && lang !== "en") {
       lang = /^en\b/i.test(navigator.language || "") ? "en" : "es";
     }
@@ -18,6 +21,7 @@
     root.lang = lang;
 
     var theme = readPreference("theme");
+    root.setAttribute("data-theme-preference", theme === "light" || theme === "dark" ? theme : "auto");
     if (theme !== "light" && theme !== "dark") {
       theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
