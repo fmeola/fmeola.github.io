@@ -19,7 +19,7 @@
 
   <rect x="120" y="120" width="960" height="390" rx="36" fill="#ffffff" stroke="#e3e6ea"/>
 
-  <text x="180" y="230" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" letter-spacing="6" fill="#6b6f76">PERSONAL SITE</text>
+  <text x="180" y="230" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" letter-spacing="6" fill="#6b6f76">SITIO PERSONAL</text>
   <text x="180" y="320" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="54" fill="#111111">Franco Román Meola</text>
   <text x="180" y="380" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" fill="#2a2a2a">Docente dedicación exclusiva en ITBA.</text>
   <text x="180" y="415" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-size="22" fill="#2a2a2a">Cursos de grado de programación y desarrollo de software.</text>

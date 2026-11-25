@@ -87,10 +87,6 @@ a:hover {
   margin-bottom: 24px;
 }
 
-.topbar[hidden] {
-  display: none;
-}
-
 .lang-switch {
   display: flex;
   align-items: center;
@@ -131,6 +127,18 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.topbar[hidden],
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5ch;
 }
 
 .theme-toggle svg {
